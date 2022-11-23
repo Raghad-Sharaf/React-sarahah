@@ -1,8 +1,11 @@
 import React from 'react'
+import notFound from '../img/404-error-page-not-found.jpg'
 
 function NotFound() {
   return (
-    <div></div>
+    <>
+    <img src={notFound} alt="Not Found" className='w-100 h-100' />
+    </>
   )
 }
 
