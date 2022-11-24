@@ -62,9 +62,9 @@ function Register() {
       </div>)}
       <form method="POST" action="/handleLogin" onSubmit={submitFormData}>
         <input onChange={getUser} className="form-control" placeholder="Enter your name" type="text" name="userName" />
-        <input onChange={getUser} className="form-control my-4" placeholder="Enter your email" type="text" name="email" />
-        <input onChange={getUser} className="form-control my-4 " placeholder="Enter your Password" type="text" name="password" />
-        <input onChange={getUser} className="form-control my-4 " placeholder="Enter Confirm Password" type="text" name="cpassword" />
+        <input onChange={getUser} className="form-control my-4" placeholder="Enter your email" type="email" name="email" />
+        <input onChange={getUser} className="form-control my-4 " placeholder="Enter your Password" type="password" name="password" />
+        <input onChange={getUser} className="form-control my-4 " placeholder="Enter Confirm Password" type="password" name="cpassword" />
         <button className="btn btn-default-outline" type='submit'>Register</button>
       </form>
     </div>

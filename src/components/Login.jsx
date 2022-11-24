@@ -57,8 +57,8 @@ function Login() {
         {error.message}
       </div>)}
       <form method="POST" action="/handleLogin" onSubmit={submitFormData}>
-        <input onChange={getUser} className="form-control my-4" placeholder="Enter your email" type="text" name="email" />
-        <input onChange={getUser} className="form-control my-4 " placeholder="Enter your Password" type="text" name="password" />
+        <input onChange={getUser} className="form-control my-4" placeholder="Enter your email" type="email" name="email" />
+        <input onChange={getUser} className="form-control my-4 " placeholder="Enter your Password" type="password" name="password" />
         <button className="btn btn-default-outline" type='submit'>Login</button>
         <div>
         <p><Link className="text-muted forgot btn" to="">I Forgot My Password</Link></p>
