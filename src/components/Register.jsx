@@ -22,7 +22,7 @@ function Register() {
   }
   let [errorList,setErrorList] = useState([]);
   let [errorMsg,setErrorMsg] = useState('');
-  async function submitFormData(e){
+  let submitFormData = async (e) => {
     e.preventDefault();
     let {data} = await axios.post("http://localhost:3003/api/v1/auth/signup",user);
     if (data.message == 'done')
@@ -31,6 +31,7 @@ function Register() {
     }else{
       setErrorMsg(data.message)
     }
+
     let validateResult = validateForm();
     if (validateResult.error){
       setErrorList(validateResult.error.details);
@@ -47,6 +48,8 @@ function Register() {
     })
     return schema.validate(user,{abortEarly:false})
   }
+
+  
   return (
     <div className="container text-center my-5">
     <div className="user my-3">

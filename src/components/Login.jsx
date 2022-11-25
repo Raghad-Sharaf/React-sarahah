@@ -15,12 +15,12 @@ function Login() {
   }
   let navigate = useNavigate();
   function goToHome(){
-    let path = '/';
+    let path = '/user';
     navigate (path);
   }
   let [errorList,setErrorList] = useState([]);
   let [errorMsg,setErrorMsg] = useState('');
-  async function submitFormData(e){
+  let submitFormData = async (e) => {
     e.preventDefault();
     let {data} = await axios.post("http://localhost:3003/api/v1/auth/signin",user);
     if (data.message == 'login')
@@ -29,6 +29,7 @@ function Login() {
     }else{
       setErrorMsg(data.message)
     }
+
     let validateResult = validateForm();
     if (validateResult.error){
       setErrorList(validateResult.error.details);
@@ -60,8 +61,8 @@ function Login() {
         <input onChange={getUser} className="form-control my-4" placeholder="Enter your email" type="email" name="email" />
         <input onChange={getUser} className="form-control my-4 " placeholder="Enter your Password" type="password" name="password" />
         <button className="btn btn-default-outline" type='submit'>Login</button>
-        <div>
-        <p><Link className="text-muted forgot btn" to="">I Forgot My Password</Link></p>
+        <div> 
+        <p><Link className="text-muted forgot btn" to="/forgot">I Forgot My Password</Link></p>
         <Link className="btn btn-default-outline" to="/register">Register</Link>
         </div>
       </form>
